@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import fr.lepatou76.marilou.ButtonsRepository.Singleton.databaseRef
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.databaseRef2
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.infosSaved
 import fr.lepatou76.marilou.fragments.HomeFragment
@@ -80,6 +81,10 @@ class MainActivity : AppCompatActivity() {
             // recupération et sauvegarde du mot de passe si besoin
             val newPassword = findViewById<EditText>(R.id.password_change_text_edit).text.toString()
             databaseRef2.child("password").setValue(newPassword)
+            // recuperation et sauvegarde de l'action (name) du bouton au cas ou changement
+            val newAction = findViewById<EditText>(R.id.editText_action).text.toString()
+            val position = findViewById<EditText>(R.id.editText_position).text.toString()
+            databaseRef.child("button" + position).child("name").setValue(newAction)
             // injecter le fragment modifié dans notre boite (fragment_container)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, HomeFragment(this, newNbButtons))
@@ -139,8 +144,4 @@ class MainActivity : AppCompatActivity() {
             exitProcess(0)
         }
     }
-
-
-
-
 }
