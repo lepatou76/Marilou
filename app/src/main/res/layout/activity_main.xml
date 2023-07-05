@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/middle_blue"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/page_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/comic_neue_bold"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/parameters_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/app_parameters"
+        android:fontFamily="@font/comic_neue_bold"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:background="@color/light_blue" />
+
+
+    <LinearLayout
+        android:id="@+id/password_layout"
+        android:layout_width="150dp"
+        android:layout_height="160dp"
+        android:background="@drawable/layout_password"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:elevation="5dp"
+        android:layout_marginBottom="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragment_container">
+
+        <androidx.constraintlayout.utils.widget.MotionLabel
+            android:id="@+id/motionLabel"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/password_text_edit"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/middle_blue"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
+            android:textSize="30sp"
+            tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TextFields" />
+
+        <Button
+            android:id="@+id/password_valid_button"
+            style="@style/default_text_style"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:text="OK"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/valid_button"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        style="@style/default_text_style"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/valider"
+        app:strokeColor="#3F9AA6"
+        app:strokeWidth="5sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="VisualLintOverlap" />
+
+    <Button
+        android:id="@+id/exit_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        style="@style/default_text_style"
+        android:text="@string/quitter"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Marilou</string>
+
+    <string name="app_parameters">Paramètres</string>
+    <string name="nombre_de_boutons">Changer le nombre de boutons:</string>
+    <string name="password">Mot de passe</string>
+    <string name="choose_password">Nouveau mot de passe</string>
+    <string name="choix_bouton_modifier">Choisir le bouton à modifier</string>
+    <string name="charger">Charger les infos\ndu bouton</string>
+    <string name="position">Position:</string>
+    <string name="action">Action:</string>
+    <string name="verbe">Verbe</string>
+    <string name="son">Son:</string>
+    <string name="ecouter">Ecouter</string>
+    <string name="charger_image">Charger\nune Image</string>
+    <string name="image">Image:</string>
+    <string name="valider">VALIDER</string>
+    <string name="quitter">QUITTER</string>
+    <string name="site_pour_cr_er_et_t_l_charger_vos_phrases_personnalis_es">Site pour créer et télécharger vos phrases personnalisées</string>
+    <string name="changer_mot_de_passe">Changer Mot de passe</string>
+    <string name="changer_son">Charger\nun Son</string>
+    <string name="enregistrer_le_nouveau_son">Enregistrer\nle nouveau Son</string>
+    <string name="enregistrer_la_nouvelle_image">Enregistrer\nla nouvelle Image</string>
+
+
+    <string-array name="nb_buttons_input">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+</resources>

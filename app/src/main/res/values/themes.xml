@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Marilou" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Marilou" parent="Base.Theme.Marilou" />
+
+    <style name="default_text_style">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/comic_neue_bold</item>
+    </style>
+
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/middle_blue</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+</resources>

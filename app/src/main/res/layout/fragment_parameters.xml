@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_screen"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/nb_button_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/nb_button_textview"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/nombre_de_boutons"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <Spinner
+            android:id="@+id/button_spinner_input"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:entries="@array/nb_buttons_input"
+            android:theme="@style/Spinner"
+            tools:ignore="VisualLintBounds" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/modif_button_spinner_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nb_button_layout">
+
+        <TextView
+            android:id="@+id/modif_button"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/choix_bouton_modifier"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <Spinner
+            android:id="@+id/button_spinner_modif"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:entries="@array/nb_buttons_input"
+            android:theme="@style/Spinner" />
+
+        <Button
+            android:id="@+id/upload_button_selected"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/charger"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            tools:ignore="VisualLintBounds" />
+
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/modif_button_layout"
+        android:layout_width="700dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modif_button_spinner_layout"
+        tools:ignore="VisualLintBounds">
+
+        <ImageView
+            android:id="@+id/imageView_button"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/interrogation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <View
+            android:id="@+id/view_separation"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView_position"
+            style="@style/default_text_style"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/position"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/view_separation"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextSizeCheck" />
+
+        <EditText
+            android:id="@+id/editText_position"
+            style="@style/default_text_style"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/textView_position"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <TextView
+            android:id="@+id/textView_action"
+            style="@style/default_text_style"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/action"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/view_separation"
+            app:layout_constraintTop_toBottomOf="@+id/textView_position"
+            tools:ignore="TextSizeCheck" />
+
+        <EditText
+            android:id="@+id/editText_action"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:inputType="textNoSuggestions"
+            android:text="@string/verbe"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/textView_action"
+            app:layout_constraintTop_toBottomOf="@+id/editText_position"
+            tools:ignore="Autofill,LabelFor" />
+
+        <TextView
+            android:id="@+id/textView_son"
+            style="@style/default_text_style"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/son"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/view_separation"
+            app:layout_constraintTop_toBottomOf="@+id/textView_action"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/upload_sound_button"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/changer_son"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/listen_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/listen_button"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/ecouter"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_son"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/save_new_sound"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/enregistrer_le_nouveau_son"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/upload_sound_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView_image"
+            style="@style/default_text_style"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:text="@string/image"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/view_separation"
+            app:layout_constraintTop_toBottomOf="@+id/textView_son"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/upload_image_button"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/charger_image"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_image" />
+
+        <Button
+            android:id="@+id/save_new_image"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enregistrer_la_nouvelle_image"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/upload_image_button" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/password_change_layout"
+        android:layout_width="220dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:background="@drawable/layout_password"
+        android:elevation="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginBottom="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.utils.widget.MotionLabel
+            android:id="@+id/motionLabel"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_password"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/password_change_text_edit"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/middle_blue"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
+            android:textSize="30sp"
+            tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TextFields" />
+
+        <Button
+            android:id="@+id/password_change_valid_button"
+            style="@style/default_text_style"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:text="OK"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modif_button_layout">
+
+        <Button
+            android:id="@+id/internet_link_button"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site_pour_cr_er_et_t_l_charger_vos_phrases_personnalis_es"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/password_change_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/password_change_button"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/changer_mot_de_passe"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

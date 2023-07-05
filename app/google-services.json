@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "255778222866",
+    "project_id": "marilou-30309",
+    "storage_bucket": "marilou-30309.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255778222866:android:d223d2b9d78cc05090b9cb",
+        "android_client_info": {
+          "package_name": "fr.lepatou76.marilou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255778222866-ag8hg37mu54n31l0jbe5nciirauuu3ge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATfjCptJempzpItroAfOqs9BBSBsaWogM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255778222866-ag8hg37mu54n31l0jbe5nciirauuu3ge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
