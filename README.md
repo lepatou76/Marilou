@@ -1,5 +1,6 @@
 # Marilou
-application simplifiee de communication sonore pour handicap avec age mental faible sur demande de parents
+application simplifiee de communication sonore pour handicap avec age mental faible sur demande de parents.
+Je suis en premiere année de BTS Informatique et grand débutant sous Android studio et en Kotlin, j'ai voulu réaliser ce projet pendant mon stage en entreprise.
 
 D’où est venue l’idée ?
 La maman d’une jeune handicapée a lancé un appel sur les réseaux afin d’avoir de l’aide pour la création d’une application lui permettant de pouvoir communiquer avec sa fille.
