@@ -21,6 +21,7 @@ import fr.lepatou76.marilou.ButtonsRepository.Singleton.infosSaved
 
 class ButtonsRepository {
 
+    // Singleton pour gerer les liens avec la base de données
     object Singleton {
         //donner le lien pour accéder au bucket
         private const val BUCKET_URL: String = "gs://marilou-30309.appspot.com"
@@ -39,7 +40,6 @@ class ButtonsRepository {
         var downloadImageUri: Uri? = null
         // pour contenir le lien du nouveau son
         var downloadSoundUri: Uri? = null
-
     }
 
     fun updateData(callback: () -> Unit) {
@@ -63,8 +63,10 @@ class ButtonsRepository {
             override fun onCancelled(error: DatabaseError) {}
 
         })
+        // absorber les données depuis la databaseRef --> liste avec nombre de boutons et mot de passe
         databaseRef2.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                // retirer les anciennes valeurs
                 infosSaved.clear()
                 for (ds in snapshot.children) {
                     // construire un objet bouton

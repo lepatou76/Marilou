@@ -15,23 +15,18 @@ import fr.lepatou76.marilou.adapter.ButtonAdapter
 
 class HomeFragment(private val context: MainActivity, private val nbButtons: Int): Fragment() {
 
-
     var nbButtons1 = 0
     var nbButtons2 = 0
+    var buttonList1 = arrayListOf<ButtonModel>()
+    var buttonList2 = arrayListOf<ButtonModel>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-
-        var buttonList1 = arrayListOf<ButtonModel>()
-        var buttonList2 = arrayListOf<ButtonModel>()
-
-
-        // adapter position et images des boutons suivant leur nombre
+        // adapter position et images des boutons suivant le nombre choisi
         if(nbButtons <= 3){
             nbButtons1 = nbButtons
             buttonList1.add(buttonList[0])
-
             if(nbButtons1 == 2){
                 buttonList1.add(buttonList[1])
             }
@@ -48,7 +43,6 @@ class HomeFragment(private val context: MainActivity, private val nbButtons: Int
                 buttonList1.add(buttonList[1])
                 buttonList2.add(buttonList[2])
                 buttonList2.add(buttonList[3])
-
             }
            else{
                 nbButtons1 = 3
@@ -78,8 +72,6 @@ class HomeFragment(private val context: MainActivity, private val nbButtons: Int
         if(nbButtons <=3) {
             recyclerViewButtonsTwo.visibility = View.GONE
         }
-
-
 
         return view
     }

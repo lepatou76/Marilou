@@ -45,23 +45,25 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
     ): View? {
         val view = inflater.inflate(R.layout.fragment_parameters, container, false)
 
+        // selection du spinner sur le nombre de boutons actuel
         view.findViewById<Spinner>(R.id.button_spinner_input).setSelection(nbButton-1)
+        // recuperation du mot de passe actuel
+        view.findViewById<EditText>(R.id.password_change_text_edit).setText(infosSaved[1])
+        // cacher le layout de modification du mot de passe
+        view.findViewById<LinearLayout>(R.id.password_change_layout).visibility = View.GONE
+        // rendre impossible le changement de position du bouton
+        view.findViewById<EditText>(R.id.editText_position).isEnabled = (false)
         selectButton(view)
         listenButton(view)
-        changePosition(view)
         changeAction(view)
         changePassword(view)
-        view.findViewById<EditText>(R.id.password_change_text_edit).setText(infosSaved[1])
-        view.findViewById<LinearLayout>(R.id.password_change_layout).visibility = View.GONE
-        view.findViewById<EditText>(R.id.editText_position).isEnabled = (false)
-
+        // initialisation de l'image dans les parametres
         uploadedImage = view.findViewById(R.id.imageView_button)
 
-        // selectionner par défaut le bouton 1 pour la modification
+        // selectionner par défaut le bouton 1 pour la modification et afficher ses infos
         val position =
             view.findViewById<Spinner>(R.id.button_spinner_modif)?.selectedItem.toString().toInt() - 1
         val button: ButtonModel = buttonList[position]
-
         view.findViewById<EditText>(R.id.editText_position).text = SpannableStringBuilder((button.position).toString())
         view.findViewById<EditText>(R.id.editText_action)?.text = SpannableStringBuilder(button.name)
         Glide.with(context).load(Uri.parse(button.imageUrl)).into(view.findViewById(R.id.imageView_button))
@@ -78,7 +80,7 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         pickupSoundButton.setOnClickListener { pickupSound() }
         // récuperer le bouton pour aller sur le site internet
         val internetLinkButton = view.findViewById<Button>(R.id.internet_link_button)
-        // clique pour aller sur le site
+        // clique pour aller sur le site de creation de son
         internetLinkButton.setOnClickListener {
             // adresse du site
             val url = "https://magicrec.com/fr/text-to-speech"
@@ -99,6 +101,7 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         return view
     }
 
+    // Pour sauvegarder l'image si on est allé en selectionner une nouvelle
     private fun saveSound(view: View) {
         val repo = ButtonsRepository()
 
@@ -121,6 +124,7 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         }
     }
 
+    // Pour sauvegarder le son si on est allé en selectionner un nouveau
     private fun saveImage(view: View) {
         val repo = ButtonsRepository()
 
@@ -143,15 +147,16 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         }
     }
 
+    // pour aller chercher une image dans l'appareil
     private fun pickupImage() {
         imageChange += 1
         val intent = Intent()
         intent.type = "*/*"
         intent.action = Intent.ACTION_GET_CONTENT
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), 33)
-
     }
 
+    // pour aller chercher un son dans l'appareil
     private fun pickupSound() {
         soundChange += 1
         val intent = Intent()
@@ -178,14 +183,10 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
             fileSound = data.data
             // mettre à jour le son
             sound = (MediaPlayer.create(context, fileSound))
-
-            // heberger le son sur le bucket
-            //val repo = ButtonsRepository()
-            //repo.uploadSon(selectedSound!!)
-
         }
     }
 
+    // pour charger les informations du bouton selectionné
     private fun selectButton(view: View){
         val uploadSelectedButton = view.findViewById<Button>(R.id.upload_button_selected)
         uploadSelectedButton.setOnClickListener {
@@ -201,6 +202,7 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         }
     }
 
+    // pour ecouter le son actuel
     private fun listenButton(view: View){
         val listenButton = view.findViewById<Button>(R.id.listen_button)
         listenButton.setOnClickListener {
@@ -208,13 +210,7 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         }
     }
 
-    private fun changePosition(view: View){
-        val textPosition = view.findViewById<EditText>(R.id.editText_position)
-        textPosition.setOnClickListener {
-            textPosition.setSelection(textPosition.text.length)
-        }
-    }
-
+    // place le curseur a la fin du text
     private fun changeAction(view: View){
         val changePosition = view.findViewById<EditText>(R.id.editText_action)
         changePosition.setOnClickListener {
@@ -222,6 +218,7 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         }
     }
 
+    // pour modifier le mot de passe
     private fun changePassword(view: View){
         val changePassword = view.findViewById<Button>(R.id.password_change_button)
         val textPassword = view.findViewById<EditText>(R.id.password_change_text_edit)
@@ -236,10 +233,5 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
             view.findViewById<LinearLayout>(R.id.password_change_layout).visibility = View.GONE
             textPassword.isEnabled = (false)
         }
-
     }
-
-
-
-
 }
