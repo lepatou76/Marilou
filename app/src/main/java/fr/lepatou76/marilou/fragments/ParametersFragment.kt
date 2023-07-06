@@ -48,11 +48,13 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         // selection du spinner sur le nombre de boutons actuel
         view.findViewById<Spinner>(R.id.button_spinner_input).setSelection(nbButton-1)
         // recuperation du mot de passe actuel
-        view.findViewById<EditText>(R.id.password_change_text_edit).setText(infosSaved[1])
+        view.findViewById<EditText>(R.id.password_change_text_edit).setText(infosSaved[2])
         // cacher le layout de modification du mot de passe
         view.findViewById<LinearLayout>(R.id.password_change_layout).visibility = View.GONE
         // rendre impossible le changement de position du bouton
         view.findViewById<EditText>(R.id.editText_position).isEnabled = (false)
+        // charger le délai d'inactivité bouton sauvegardé
+        view.findViewById<EditText>(R.id.editTextDelay).text = SpannableStringBuilder(infosSaved[0].toString())
         selectButton(view)
         listenButton(view)
         changeAction(view)
@@ -212,9 +214,9 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
 
     // place le curseur a la fin du text
     private fun changeAction(view: View){
-        val changePosition = view.findViewById<EditText>(R.id.editText_action)
-        changePosition.setOnClickListener {
-            changePosition.setSelection(changePosition.text.length)
+        val changeAction = view.findViewById<EditText>(R.id.editText_action)
+        changeAction.setOnClickListener {
+            changeAction.setSelection(changeAction.text.length)
         }
     }
 

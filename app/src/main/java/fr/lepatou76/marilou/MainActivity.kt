@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val masterPassword = "2309"
     private var password = "0000"
     private var newNbButtons = 1
+    private var delay = 3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +42,10 @@ class MainActivity : AppCompatActivity() {
 
         // mettre à jour la liste de boutons et les infos sauvegardées
         repo.updateData {
-            val nbButtons = infosSaved[0].toInt()
-            newNbButtons = infosSaved[0].toInt()
-            password = infosSaved[1]
+            delay = infosSaved[0].toInt()
+            val nbButtons = infosSaved[1].toInt()
+            newNbButtons = infosSaved[1].toInt()
+            password = infosSaved[2]
             // injecter le fragment dans notre boite (fragment_container)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, HomeFragment(this, nbButtons))
@@ -85,6 +87,9 @@ class MainActivity : AppCompatActivity() {
             val newAction = findViewById<EditText>(R.id.editText_action).text.toString()
             val position = findViewById<EditText>(R.id.editText_position).text.toString()
             databaseRef.child("button" + position).child("name").setValue(newAction)
+            // recupération et sauvegarde du délai anti spam des boutons
+            val newDelay = findViewById<EditText>(R.id.editTextDelay).text.toString()
+            databaseRef2.child("delay").setValue(newDelay)
             // injecter le fragment modifié dans notre boite (fragment_container)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, HomeFragment(this, newNbButtons))

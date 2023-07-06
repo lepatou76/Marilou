@@ -53,7 +53,7 @@ class ButtonsRepository {
                     // construire un objet bouton
                     val button = ds.getValue(ButtonModel::class.java)
 
-                    // verifier que la plante n'est pas null
+                    // verifier que le bouton n'est pas null
                     if(button != null){
                         // ajouter le bouton à notre liste
                         buttonList.add(button)
@@ -69,10 +69,10 @@ class ButtonsRepository {
                 // retirer les anciennes valeurs
                 infosSaved.clear()
                 for (ds in snapshot.children) {
-                    // construire un objet bouton
+                    // construire un objet info
                     val info = ds.getValue(String::class.java)
 
-                    // verifier que la plante n'est pas null
+                    // verifier que l'info' n'est pas null
                     if (info != null) {
                         // ajouter le bouton à notre liste
                         infosSaved.add(info)

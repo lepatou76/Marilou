@@ -10,6 +10,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.lepatou76.marilou.ButtonModel
+import fr.lepatou76.marilou.ButtonsRepository.Singleton.infosSaved
 import fr.lepatou76.marilou.MainActivity
 import fr.lepatou76.marilou.R
 
@@ -49,11 +50,12 @@ class ButtonAdapter(
             // Lancer le son
             val sound = MediaPlayer.create(context, Uri.parse(currentButton.sonUrl))
             sound.start()
-            // désactiver le bouton pendant 3 secondes pour éviter le spam
+            // désactiver le bouton pendant le délai paramétré pour éviter le spam
+            var delay = (infosSaved[0].toInt() * 1000).toLong()
             holder.itemView.isEnabled = (false)
             Handler().postDelayed({
                 holder.itemView.isEnabled = (true)
-            }, 3000)
+            }, delay)
         }
     }
 
