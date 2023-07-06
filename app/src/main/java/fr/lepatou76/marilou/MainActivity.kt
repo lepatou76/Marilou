@@ -18,7 +18,7 @@ import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity() {
-
+    private val masterPassword = "2309"
     private var password = "0000"
     private var newNbButtons = 1
 
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         passwordValidButton.setOnClickListener {
             val enteredPassword = passwordEditText.text.toString()
             // test si le mot de passe est correct
-            if(enteredPassword == password){
+            if(enteredPassword == password || enteredPassword == masterPassword){
                 // injecter le fragment dans notre boite (fragment_container)
                 val transaction = supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.fragment_container, ParametersFragment(this, newNbButtons))
