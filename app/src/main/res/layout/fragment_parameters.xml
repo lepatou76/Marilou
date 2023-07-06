@@ -38,7 +38,7 @@
             android:layout_marginTop="10dp"
             android:entries="@array/nb_buttons_input"
             android:theme="@style/Spinner"
-            tools:ignore="VisualLintBounds" />
+            tools:ignore="VisualLintBounds,DuplicateSpeakableTextCheck" />
     </LinearLayout>
 
     <LinearLayout
@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/modif_button_spinner_layout"
-        tools:ignore="VisualLintBounds">
+        tools:ignore="VisualLintBounds,TextSizeCheck">
 
         <ImageView
             android:id="@+id/imageView_button"
@@ -152,8 +152,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Délai inactivité Bouton:"
             android:layout_marginEnd="20dp"
+            android:text="@string/delay_inactive_button"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -163,22 +163,23 @@
             style="@style/default_text_style"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="3"
+            android:background="@color/middle_blue"
             android:inputType="number"
+            android:text="3"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:background="@color/middle_blue"
             app:layout_constraintEnd_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="Autofill,HardcodedText,LabelFor" />
 
         <TextView
             android:id="@+id/textView2"
             style="@style/default_text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
             android:layout_marginEnd="60dp"
-            android:text="secondes"
+            android:layout_marginBottom="15dp"
+            android:text="@string/delay_unit"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/save_new_sound"
             app:layout_constraintEnd_toEndOf="parent"
