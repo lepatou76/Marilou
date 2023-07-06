@@ -2,6 +2,7 @@ package fr.lepatou76.marilou.adapter
 
 import android.media.MediaPlayer
 import android.net.Uri
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,8 +49,12 @@ class ButtonAdapter(
             // Lancer le son
             val sound = MediaPlayer.create(context, Uri.parse(currentButton.sonUrl))
             sound.start()
+            // désactiver le bouton pendant 3 secondes pour éviter le spam
+            holder.itemView.isEnabled = (false)
+            Handler().postDelayed({
+                holder.itemView.isEnabled = (true)
+            }, 3000)
         }
-
     }
 
     override fun getItemCount(): Int = buttonList.size
