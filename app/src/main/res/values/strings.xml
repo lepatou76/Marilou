@@ -21,6 +21,8 @@
     <string name="changer_son">Charger\nun Son</string>
     <string name="enregistrer_le_nouveau_son">Enregistrer\nle nouveau Son</string>
     <string name="enregistrer_la_nouvelle_image">Enregistrer\nla nouvelle Image</string>
+    <string name="delay_inactive_button">Délai inactivité Bouton:</string>
+    <string name="delay_unit">secondes</string>
 
 
     <string-array name="nb_buttons_input">
