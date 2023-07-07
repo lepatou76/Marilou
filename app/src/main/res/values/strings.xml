@@ -23,7 +23,13 @@
     <string name="enregistrer_la_nouvelle_image">Enregistrer\nla nouvelle Image</string>
     <string name="delay_inactive_button">Délai inactivité Bouton:</string>
     <string name="delay_unit">secondes</string>
-
+    <string name="reinitialiser_application">Réinitialiser l\'application</string>
+    <string name="text_reinitialisation">En confirmant vous remettrez l\'application\nà son état d\'origine par défaut:\nImages, sons, disposition des boutons\net mot de passe</string>
+    <string name="reinitialiser">Réinitialiser\nl\'application</string>
+    <string name="confirmer">Confirmer</string>
+    <string name="oui">OUI</string>
+    <string name="non">NON</string>
+    <string name="attente_enregistrement">Enregistrement...\nAttendre\npour VALIDER</string>
 
     <string-array name="nb_buttons_input">
         <item>1</item>
