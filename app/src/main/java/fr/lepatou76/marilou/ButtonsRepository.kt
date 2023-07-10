@@ -138,5 +138,4 @@ class ButtonsRepository {
     fun updateButton(button: ButtonModel) {
         databaseRef.child("button" + button.position.toString()).setValue(button)
     }
-
 }
