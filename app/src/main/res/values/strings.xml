@@ -30,6 +30,7 @@
     <string name="oui">OUI</string>
     <string name="non">NON</string>
     <string name="attente_enregistrement">Enregistrement...\nAttendre\npour VALIDER</string>
+    <string name="consuler_mode_d_emploi">Télécharger\nMode\nd\'emploi</string>
 
     <string-array name="nb_buttons_input">
         <item>1</item>

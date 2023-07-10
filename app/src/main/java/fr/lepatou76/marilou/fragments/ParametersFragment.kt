@@ -21,7 +21,6 @@ import com.bumptech.glide.Glide
 import fr.lepatou76.marilou.ButtonModel
 import fr.lepatou76.marilou.ButtonsRepository
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.buttonList
-import fr.lepatou76.marilou.ButtonsRepository.Singleton.databaseRef2
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.downloadImageUri
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.downloadSoundUri
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.infosSaved
@@ -121,6 +120,17 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         val resetButton = view.findViewById<Button>(R.id.reset_app)
         // clique pour lancer la procédure
         resetButton.setOnClickListener { restApp(view) }
+        // recuperer bouton mode d'emploi
+        val noticeButton = view.findViewById<Button>(R.id.read_notice)
+        // clique pour accéderà la notice
+        noticeButton.setOnClickListener {
+            // adresse du lien de la notice
+            val url = "https://firebasestorage.googleapis.com/v0/b/marilou-30309.appspot.com/o/Doc%20appli%20Marilou.pdf?alt=media&token=b2b6f229-663a-4086-a4d7-fbd47375f980"
+            // activité pour la récupérer et l'afficher
+            val intent = Intent(Intent.ACTION_QUICK_VIEW)
+            intent.setDataAndType(Uri.parse(url), "application/pdf")
+            startActivity(intent)
+        }
 
         return view
     }
