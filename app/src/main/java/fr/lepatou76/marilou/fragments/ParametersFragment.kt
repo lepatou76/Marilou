@@ -21,6 +21,7 @@ import com.bumptech.glide.Glide
 import fr.lepatou76.marilou.ButtonModel
 import fr.lepatou76.marilou.ButtonsRepository
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.buttonList
+import fr.lepatou76.marilou.ButtonsRepository.Singleton.databaseRef2
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.downloadImageUri
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.downloadSoundUri
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.infosSaved
@@ -55,7 +56,7 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         // rendre impossible le changement de position du bouton
         view.findViewById<EditText>(R.id.editText_position).isEnabled = (false)
         // charger le délai d'inactivité bouton sauvegardé
-        view.findViewById<EditText>(R.id.editTextDelay).text = SpannableStringBuilder(infosSaved[0].toString())
+        view.findViewById<EditText>(R.id.editTextDelay).text = SpannableStringBuilder(infosSaved[0])
         // cacher le layout de confirmation réinitialisation
         view.findViewById<LinearLayout>(R.id.confirm_reset_layout).visibility = View.GONE
         // cacher l'attente enregistrement
@@ -270,7 +271,7 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         }
         // choix de réinitialiser
         yesButton.setOnClickListener {resetButtons(view) {
-            // disparition de la fenêtre et focus sur le bouton VALIDER
+            // disparition de la fenêtre
             view.findViewById<LinearLayout>(R.id.confirm_reset_layout).visibility = View.GONE
             }
         }
@@ -278,6 +279,7 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
 
     private fun resetButtons(view: View, callback: () -> Unit) {
         val repo = ButtonsRepository()
+
         // recréer les six boutons d'origine grace au stockage de FireBase et le mettre à jour dans la bdd
         val button1 = ButtonModel(1, "Manger", "https://firebasestorage.googleapis.com/v0/b/marilou-30309.appspot.com/o/faim.jpg?alt=media&token=677a503f-f096-4e23-a741-4a920183e74c",
             "https://firebasestorage.googleapis.com/v0/b/marilou-30309.appspot.com/o/faim.mp3?alt=media&token=4d9e4d43-f196-4b83-935d-848e279f101a")
@@ -297,6 +299,11 @@ class ParametersFragment(private val context: MainActivity, nbButtons: Int): Fra
         val button6 = ButtonModel(6,"Se promener","https://firebasestorage.googleapis.com/v0/b/marilou-30309.appspot.com/o/se_promener.jpg?alt=media&token=babc7c2b-7fcf-4b5d-9723-ce955b770e67",
             "https://firebasestorage.googleapis.com/v0/b/marilou-30309.appspot.com/o/se_promener.mp3?alt=media&token=a6136713-8a4f-4716-a1fb-435328764468")
         repo.updateButton(button6)
+        // remettre le nombre de boutons, le mot de passe et le délai anti spam bouton d'origine
+        view.findViewById<Spinner>(R.id.button_spinner_input).setSelection(5)
+        view.findViewById<EditText>(R.id.password_change_text_edit).setText("1111")
+        view.findViewById<EditText>(R.id.editTextDelay).setText("3")
+
         callback()
 
     }
