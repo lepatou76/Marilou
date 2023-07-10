@@ -166,7 +166,7 @@
             android:textColor="@color/white"
             android:shadowColor="@color/black"
             android:elevation="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:ignore="Autofill,HardcodedText,LabelFor" />
@@ -481,5 +481,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="@color/warning"
         app:strokeWidth="5sp" />
+
+    <Button
+        android:id="@+id/read_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consuler_mode_d_emploi"
+        style="@style/default_text_style"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/green"
+        app:strokeWidth="5sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
