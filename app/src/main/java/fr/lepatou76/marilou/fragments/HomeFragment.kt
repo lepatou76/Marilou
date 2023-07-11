@@ -62,12 +62,12 @@ class HomeFragment(private val context: MainActivity, private val nbButtons: Int
         // recuperer le recyclerview1
         val recyclerViewButtonsOne = view.findViewById<RecyclerView>(R.id.recycler_view_buttons_one)
         if (recyclerViewButtonsOne != null) {
-            recyclerViewButtonsOne.adapter = ButtonAdapter(context, nbButtons1, buttonList1)
+            recyclerViewButtonsOne.adapter = ButtonAdapter(context, buttonList1)
         }
 
         // recupérer le recyclerview2
         val recyclerViewButtonsTwo = view.findViewById<RecyclerView>(R.id.recycler_view_buttons_two)
-        recyclerViewButtonsTwo.adapter = ButtonAdapter(context, nbButtons2, buttonList2)
+        recyclerViewButtonsTwo.adapter = ButtonAdapter(context, buttonList2)
         // rendre inaccessible la ligne 2 si besoin
         if(nbButtons <=3) {
             recyclerViewButtonsTwo.visibility = View.GONE

@@ -17,7 +17,7 @@ import fr.lepatou76.marilou.R
 
 class ButtonAdapter(
     private val context: MainActivity,
-    private val nbButtons: Int,
+    //private val nbButtons: Int,
     private val buttonList: List<ButtonModel>
     ): RecyclerView.Adapter<ButtonAdapter.ViewHolder>() {
 
@@ -25,8 +25,6 @@ class ButtonAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         // image du bouton
         val buttonImage = view.findViewById<ImageView>(R.id.image_item)!!
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,7 +38,6 @@ class ButtonAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // recuperer les infos du bouton
         val currentButton = buttonList[position]
-
 
         // utiliser glide pour mettre à jour l'image
         Glide.with(context).load(Uri.parse(currentButton.imageUrl)).into(holder.buttonImage)
