@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_screen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/modif_button_layout"
+        android:layout_width="750dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck">
+
+        <ImageView
+            android:id="@+id/imageView_button"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/interrogation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <View
+            android:id="@+id/view_separation"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView_position"
+            style="@style/default_text_style"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/position"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/view_separation"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextSizeCheck" />
+
+        <EditText
+            android:id="@+id/editText_position"
+            style="@style/default_text_style"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/textView_position"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/delay_inactive_button"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextDelay"
+            style="@style/default_text_style"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/middle_blue"
+            android:elevation="10dp"
+            android:inputType="number"
+            android:shadowColor="@color/black"
+            android:text="3"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="Autofill,HardcodedText,LabelFor" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:text="@string/delay_unit"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView_action"
+            style="@style/default_text_style"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/action"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/view_separation"
+            app:layout_constraintTop_toBottomOf="@+id/textView_position"
+            tools:ignore="TextSizeCheck" />
+
+        <EditText
+            android:id="@+id/editText_action"
+            style="@style/default_text_style"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/middle_blue"
+            android:elevation="10dp"
+            android:inputType="textNoSuggestions"
+            android:shadowColor="@color/black"
+            android:text="@string/verbe"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/textView_action"
+            app:layout_constraintTop_toBottomOf="@+id/editText_position"
+            tools:ignore="Autofill,LabelFor" />
+
+        <TextView
+            android:id="@+id/textView_son"
+            style="@style/default_text_style"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:text="@string/sound"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/view_separation"
+            app:layout_constraintTop_toBottomOf="@+id/textView_action"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/upload_sound_button"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/change_sound"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/listen_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp" />
+
+        <Button
+            android:id="@+id/listen_button"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/listen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_son"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp" />
+
+        <Button
+            android:id="@+id/save_new_sound"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/save_new_sound"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/upload_sound_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp" />
+
+
+        <TextView
+            android:id="@+id/textView_image"
+            style="@style/default_text_style"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="@string/image"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view_separation"
+            app:layout_constraintTop_toBottomOf="@+id/textView_son"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/upload_image_button"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_image"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp" />
+
+        <Button
+            android:id="@+id/save_new_image"
+            style="@style/default_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/save_new_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/upload_image_button"
+            app:strokeColor="#3F9AA6"
+            app:strokeWidth="2sp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/internet_link_button"
+        style="@style/default_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/link_to_create_and_download_your_own_sentences"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#3F9AA6"
+        app:strokeWidth="2sp" />
+
+    <Button
+        android:id="@+id/waiting_upload"
+        style="@style/default_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/wait_while_upload"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeColor="@color/warning"
+        app:strokeWidth="5sp" />
+
+    <Button
+        android:id="@+id/valid_button2"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        style="@style/default_text_style"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/validate"
+        app:strokeColor="#3F9AA6"
+        app:strokeWidth="5sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
