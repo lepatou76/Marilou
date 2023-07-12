@@ -93,7 +93,7 @@
         style="@style/default_text_style"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:text="@string/valider"
+        android:text="@string/validate"
         app:strokeColor="#3F9AA6"
         app:strokeWidth="5sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         style="@style/default_text_style"
-        android:text="@string/quitter"
+        android:text="@string/exit"
         android:layout_marginEnd="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
