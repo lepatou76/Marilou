@@ -5,7 +5,7 @@
     <string name="change_nb_buttons">Changer le nombre de boutons:</string>
     <string name="password">Mot de passe</string>
     <string name="choose_password">Nouveau mot de passe</string>
-    <string name="select_button_modification">Choisir le bouton à modifier</string>
+    <string name="select_button_modification">Choisir un bouton à modifier</string>
     <string name="upload_informations">Charger les infos\ndu bouton</string>
     <string name="position">Position:</string>
     <string name="action">Action:</string>
@@ -21,7 +21,7 @@
     <string name="change_sound">Charger\nun Son</string>
     <string name="save_new_sound">Enregistrer\nle nouveau Son</string>
     <string name="save_new_image">Enregistrer\nla nouvelle Image</string>
-    <string name="delay_inactive_button">Délai inactivité Bouton:</string>
+    <string name="delay_inactive_button">Délai inactivité Boutons:</string>
     <string name="delay_unit">secondes</string>
     <string name="reset_app">Réinitialiser l\'application</string>
     <string name="text_reset_warning">En confirmant vous remettrez l\'application\nà son état d\'origine par défaut:\nImages, sons, disposition des boutons\net mot de passe</string>
@@ -30,7 +30,7 @@
     <string name="yes">OUI</string>
     <string name="no">NON</string>
     <string name="wait_while_upload">Enregistrement...\nAttendre\npour VALIDER</string>
-    <string name="read_notice">Télécharger\nMode\nd\'emploi</string>
+    <string name="read_notice">Télécharger\nMode d\'emploi</string>
 
     <string-array name="nb_buttons_input">
         <item>1</item>
