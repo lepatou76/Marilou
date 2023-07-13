@@ -70,10 +70,10 @@ class ParametersFragment(private val context: MainActivity): Fragment(){
             val position =
                 view.findViewById<Spinner>(R.id.button_spinner_modif).selectedItem.toString().toInt() - 1
             val button: ButtonModel = buttonList[position]
-            val transaction = parentFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.fragment_container, ButtonFragment(context, button))
-            transaction?.addToBackStack(null)
-            transaction?.commit()
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, ButtonFragment(context, button))
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
     }
 
@@ -112,6 +112,7 @@ class ParametersFragment(private val context: MainActivity): Fragment(){
         }
     }
 
+    // réinitialise la base de données
     private fun resetButtons(view: View, callback: () -> Unit) {
         val repo = ButtonsRepository()
 
@@ -141,6 +142,7 @@ class ParametersFragment(private val context: MainActivity): Fragment(){
 
         callback()
     }
+    // sauvegarde les modifications et retoune à l'écran principal
     private fun validParameters(view: View){
         // recuperer le bouton
         val validButton = view.findViewById<Button>(R.id.valid_button1)
