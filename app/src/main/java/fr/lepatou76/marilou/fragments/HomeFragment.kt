@@ -12,7 +12,6 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import fr.lepatou76.marilou.ButtonModel
-import fr.lepatou76.marilou.ButtonsRepository
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.buttonList
 import fr.lepatou76.marilou.ButtonsRepository.Singleton.infosSaved
 import fr.lepatou76.marilou.MainActivity
@@ -89,18 +88,17 @@ class HomeFragment(private val context: MainActivity, private val nbButtons: Int
         validPassword(view)
 
         return view
-
     }
 
     private fun exit(view: View){
         // recuperer le bouton
         val exitButton = view.findViewById<Button>(R.id.exit_Button)
-        // click pour quitter
+        // appui pour quitter
         exitButton.setOnClickListener {
             exitProcess(0)
         }
     }
-    // click sur le bouton parametres demande la saisie du mot de passe
+    // appui sur le bouton parametres demande la saisie du mot de passe
     private fun parametersAccess(view: View){
         // recuperer le bouton et l'Edittext
         val parametersButton = view.findViewById<Button>(R.id.parameters_button)
@@ -113,11 +111,11 @@ class HomeFragment(private val context: MainActivity, private val nbButtons: Int
             passwordEditText.isEnabled = (true)
             passwordEditText.text = null
             passwordEditText.requestFocus()
-            // bloquer le click sur le bouton parametre
+            // bloquer le bouton parametre
             parametersButton.isClickable = (false)
         }
     }
-
+    // test du mot de passe et ouverture des paramètres s'il est correct
     private fun validPassword(view: View){
         // recuperer le bouton
         val passwordValidButton = view.findViewById<Button>(R.id.password_valid_button)

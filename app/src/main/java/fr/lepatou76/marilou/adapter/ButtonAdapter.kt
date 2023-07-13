@@ -3,6 +3,7 @@ package fr.lepatou76.marilou.adapter
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +18,6 @@ import fr.lepatou76.marilou.R
 
 class ButtonAdapter(
     private val context: MainActivity,
-    //private val nbButtons: Int,
     private val buttonList: List<ButtonModel>
     ): RecyclerView.Adapter<ButtonAdapter.ViewHolder>() {
 
@@ -48,9 +48,9 @@ class ButtonAdapter(
             val sound = MediaPlayer.create(context, Uri.parse(currentButton.sonUrl))
             sound.start()
             // désactiver le bouton pendant le délai paramétré pour éviter le spam
-            var delay = (infosSaved[0].toInt() * 1000).toLong()
+            val delay = (infosSaved[0].toInt() * 1000).toLong()
             holder.itemView.isEnabled = (false)
-            Handler().postDelayed({
+            Handler(Looper.getMainLooper()).postDelayed({
                 holder.itemView.isEnabled = (true)
             }, delay)
         }

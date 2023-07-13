@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import android.os.Handler
+import android.os.Looper
 import com.bumptech.glide.Glide
 import fr.lepatou76.marilou.ButtonModel
 import fr.lepatou76.marilou.ButtonsRepository
@@ -83,7 +84,7 @@ class ButtonFragment (private val context: MainActivity, private val button: But
         saveNewImage.setOnClickListener {
             // message attente visible 3s
             view.findViewById<Button>(R.id.waiting_upload).visibility = View.VISIBLE
-            Handler().postDelayed({
+            Handler(Looper.getMainLooper()).postDelayed({
             view.findViewById<Button>(R.id.waiting_upload).visibility = View.GONE
         }, 2000)
         saveImage(view)}
@@ -93,7 +94,7 @@ class ButtonFragment (private val context: MainActivity, private val button: But
         saveNewSound.setOnClickListener {
             // message attente visible 3s
             view.findViewById<Button>(R.id.waiting_upload).visibility = View.VISIBLE
-            Handler().postDelayed({
+            Handler(Looper.getMainLooper()).postDelayed({
             view.findViewById<Button>(R.id.waiting_upload).visibility = View.GONE
             }, 2000)
         saveSound(view)}
@@ -158,7 +159,7 @@ class ButtonFragment (private val context: MainActivity, private val button: But
                     soundUrl)
                 // mettre à jour dans la bdd
                 repo.updateButton(newButton)
-                soundChange = 0
+                imageChange = 0
             }
         }
     }
@@ -194,14 +195,14 @@ class ButtonFragment (private val context: MainActivity, private val button: But
         }
     }
 
-    // place le curseur a la fin du text
+    // place le curseur a la fin du texte quand on le selectionne
     private fun changeAction(view: View){
         val changeAction = view.findViewById<EditText>(R.id.editText_action)
         changeAction.setOnClickListener {
             changeAction.setSelection(changeAction.text.length)
         }
     }
-
+    // sauvegarde les changement et retourne à l'écran principal
     private fun validButton(view: View) {
         // recuperer le bouton
         val validButton = view.findViewById<Button>(R.id.valid_button2)
